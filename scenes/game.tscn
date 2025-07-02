@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=4 uid="uid://d2nrqlw7xow7w"]
 
 [ext_resource type="PackedScene" uid="uid://rxj83y4y1yvd" path="res://scenes/player.tscn" id="1_daja3"]
-[ext_resource type="PackedScene" uid="uid://dvou42mo6uh4" path="res://game_manager.tscn" id="1_sod66"]
+[ext_resource type="PackedScene" uid="uid://dvou42mo6uh4" path="res://scenes/game_manager.tscn" id="1_sod66"]
 [ext_resource type="Texture2D" uid="uid://cy668sdyxv1n8" path="res://sprites/world_tileset.png" id="2_5yxvh"]
 [ext_resource type="FontFile" uid="uid://dwf4y45t136je" path="res://fonts/PixelOperator8-Bold.ttf" id="2_pj3cd"]
 [ext_resource type="PackedScene" uid="uid://n1xe8xjef4q8" path="res://scenes/platform_sand.tscn" id="3_e4hux"]
@@ -218,8 +218,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dunnj"]
 _data = {
-"RESET": SubResource("Animation_ou76v"),
-"moving_left_right": SubResource("Animation_2fb4v")
+&"RESET": SubResource("Animation_ou76v"),
+&"moving_left_right": SubResource("Animation_2fb4v")
 }
 
 [sub_resource type="Animation" id="Animation_4h8jr"]
@@ -256,8 +256,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vju0r"]
 _data = {
-"RESET": SubResource("Animation_4h8jr"),
-"platform_up_down": SubResource("Animation_a4smn")
+&"RESET": SubResource("Animation_4h8jr"),
+&"platform_up_down": SubResource("Animation_a4smn")
 }
 
 [sub_resource type="Animation" id="Animation_7yaky"]
@@ -293,8 +293,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jp2db"]
 _data = {
-"Bottom left to right": SubResource("Animation_7yaky"),
-"RESET": SubResource("Animation_jp4g2")
+&"Bottom left to right": SubResource("Animation_7yaky"),
+&"RESET": SubResource("Animation_jp4g2")
 }
 
 [sub_resource type="Animation" id="Animation_abbc7"]
@@ -330,8 +330,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yo37q"]
 _data = {
-"RESET": SubResource("Animation_abbc7"),
-"move_diagonal": SubResource("Animation_w4pa3")
+&"RESET": SubResource("Animation_abbc7"),
+&"move_diagonal": SubResource("Animation_w4pa3")
 }
 
 [node name="game" type="Node2D"]
@@ -415,7 +415,7 @@ position = Vector2(128, -27)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms_Sand/platform_sand_leftRight"]
 libraries = {
-"": SubResource("AnimationLibrary_dunnj")
+&"": SubResource("AnimationLibrary_dunnj")
 }
 autoplay = "moving_left_right"
 
@@ -424,7 +424,7 @@ position = Vector2(-48, -12)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms_Sand/platform_sand_updown"]
 libraries = {
-"": SubResource("AnimationLibrary_vju0r")
+&"": SubResource("AnimationLibrary_vju0r")
 }
 autoplay = "platform_up_down"
 
@@ -433,7 +433,7 @@ position = Vector2(176, 197)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms_Sand/Platform_sand_bottomlr"]
 libraries = {
-"": SubResource("AnimationLibrary_jp2db")
+&"": SubResource("AnimationLibrary_jp2db")
 }
 autoplay = "Bottom left to right"
 
@@ -442,7 +442,7 @@ position = Vector2(196, 55)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms_Sand/Platform_sand"]
 libraries = {
-"": SubResource("AnimationLibrary_yo37q")
+&"": SubResource("AnimationLibrary_yo37q")
 }
 autoplay = "move_diagonal"
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://ccew3u3hyxjhw"]
 
-[ext_resource type="Script" path="res://scripts/Coin.gd" id="1_506ty"]
+[ext_resource type="Script" uid="uid://c62udrk72kdkk" path="res://scripts/Coin.gd" id="1_506ty"]
 [ext_resource type="Texture2D" uid="uid://0imbpoosoo82" path="res://sprites/coin.png" id="2_iw8f3"]
 [ext_resource type="AudioStream" uid="uid://64k8crfk8bvj" path="res://sounds/coin.wav" id="3_wf3fa"]
 
@@ -99,45 +99,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftr4g"]
 size = Vector2(6, 8)
 
-[sub_resource type="Animation" id="Animation_kwuth"]
-resource_name = "pick_up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="Animation" id="Animation_k7e4h"]
 length = 0.001
 tracks/0/type = "value"
@@ -177,10 +138,49 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_kwuth"]
+resource_name = "pick_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xt3ex"]
 _data = {
-"RESET": SubResource("Animation_k7e4h"),
-"pick_up": SubResource("Animation_kwuth")
+&"RESET": SubResource("Animation_k7e4h"),
+&"pick_up": SubResource("Animation_kwuth")
 }
 
 [node name="Coin" type="Area2D"]
@@ -199,7 +199,7 @@ shape = SubResource("RectangleShape2D_ftr4g")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AudioStreamPlayer2D")
 libraries = {
-"": SubResource("AnimationLibrary_xt3ex")
+&"": SubResource("AnimationLibrary_xt3ex")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
